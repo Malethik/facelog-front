@@ -13,10 +13,11 @@ export const routes: Routes = [
     loadComponent: () => import('./main/shared/main/main.component'),
   },
 
-  /*  {
+  {
     path: 'register',
-    loadComponent: () =>(),
-  }, */
+    title: 'Registration page',
+    loadComponent: () => import('./main/register/register.component'),
+  },
 
   { path: '**', redirectTo: 'home' },
 ];
