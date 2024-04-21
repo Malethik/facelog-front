@@ -1,0 +1,39 @@
+<body>
+  <div class="login">
+    <form action="">
+      <h1>Register</h1>
+      <form [formGroup]="formRegister" (ngSubmit)="submit()">
+        <label class="input-box" for="name">
+          <input
+            id="name"
+            type="text"
+            placeholder="Name"
+            formControlName="name"
+          />
+          <i class="bx bx-user"></i>
+        </label>
+        <label class="input-box" for="password">
+          <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <i class="bx bxs-lock-alt"></i>
+        </label>
+        <label class="input-box" for="email">
+          <input
+            id="email"
+            type="email"
+            placeholder="email"
+            formControlName="email"
+          />
+          <i class="bx bx-envelope"></i>
+        </label>
+        <button class="btn" type="submit" [disabled]="formRegister.invalid">
+          Register
+        </button>
+      </form>
+    </form>
+  </div>
+</body>

@@ -49,6 +49,7 @@ import { RightComponent } from '../right/right.component';
   justify-content: center;
   align-items: center;
   }
+  
   .container {
   display: flex;
   flex-direction: column;
@@ -58,6 +59,7 @@ import { RightComponent } from '../right/right.component';
  margin-top: 2rem;
  margin-left:100px;
  margin-right:100px;
+ min-height:80vh;
 }
 .sidebar-left, .sidebar-right {
   margin-top:47.3px;
