@@ -3,6 +3,7 @@ import { StateService } from '../../core/service/state/state.service';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RepoService } from '../../core/service/repo/repo.service';
 import { UserCreateDto, UserLoginDto } from '../../core/entities/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export default class RegisterComponent {
   private repo = inject(RepoService);
   private state = inject(StateService);
   private fb = inject(FormBuilder);
+  router = inject(Router);
   formRegister = this.fb.group({
     name: ['admin', Validators.required],
     password: ['admin', Validators.required],
@@ -25,6 +27,7 @@ export default class RegisterComponent {
     this.repo.createUser(this.formRegister.value as UserCreateDto).subscribe({
       next: (data) => {
         console.log('User created');
+        this.router.navigate(['/login']);
       },
       error: (err) => {
         console.error(err);
