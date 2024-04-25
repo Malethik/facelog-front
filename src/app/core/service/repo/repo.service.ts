@@ -14,8 +14,9 @@ export class RepoService {
     const data = {
       name: _data.username,
       password: _data.password,
+      email: _data.email,
     };
-    return this.httpClient.post<{ token: string }>(this.url, data);
+    return this.httpClient.post<{ token: string }>(this.url + '/login', data);
   }
 
   getById(id: string) {

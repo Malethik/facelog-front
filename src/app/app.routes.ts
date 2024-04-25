@@ -19,5 +19,5 @@ export const routes: Routes = [
     loadComponent: () => import('./main/register/register.component'),
   },
 
-  { path: '**', redirectTo: 'home' },
+  { path: '**', redirectTo: 'register' },
 ];
